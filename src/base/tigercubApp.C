@@ -3,6 +3,8 @@
 #include "AppFactory.h"
 #include "ModulesApp.h"
 #include "MooseSyntax.h"
+#include "HfAlMaterial.h"
+#include "HfAlBulkMaterial.h"
 
 template <>
 InputParameters
@@ -47,6 +49,8 @@ extern "C" void
 tigercubApp__registerObjects(Factory & factory)
 {
   tigercubApp::registerObjects(factory);
+  registerMaterial(HfAlMaterial);
+  registerMaterial(HfAlBulkMaterial);
 }
 void
 tigercubApp::registerObjects(Factory & /*factory*/)
